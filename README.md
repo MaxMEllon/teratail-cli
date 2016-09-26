@@ -51,7 +51,6 @@ Installation
 ```bash
 zplug "maxmellon/teratail-cli", \
     from:gh-r, \
-    as:command, \
     use:teratail.sh, \
     on:"stedolan/jq", \
     on:"junegunn/fzf-bin", \
