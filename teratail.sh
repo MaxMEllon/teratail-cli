@@ -87,12 +87,9 @@ Usage:
 
 Config:
 
-  - `.bashrc`
+  .bashrc
 
-  ```
-  # replace your token
   export TERATAIL_API_TOKEN="0123456789abcdef0123456789abcdef0123456789"
-  ```
 
 Options:
   -h, --help Show help message
