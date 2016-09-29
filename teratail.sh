@@ -28,9 +28,14 @@ __teratail::is_cygwin() {
 
 __teratail::curl()
 {
-  curl -X $1 \
-    -H "Authorization: Bearer $TERATAIL_API_TOKEN" \
-    $2
+  if [ -z $TERATAIL_API_TOKEN ]; then
+    printf "Warning: should set env TERATAIL_API_TOKEN"
+    curl -X $1 $2
+  elif
+    curl -X $1 \
+      -H "Authorization: Bearer $TERATAIL_API_TOKEN" \
+      $2
+  fi
 }
 
 __teratail::has_command()
