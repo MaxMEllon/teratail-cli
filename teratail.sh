@@ -31,7 +31,7 @@ __teratail::curl()
   if [ -z $TERATAIL_API_TOKEN ]; then
     printf "Warning: should set env TERATAIL_API_TOKEN"
     curl -X $1 $2
-  elif
+  else
     curl -X $1 \
       -H "Authorization: Bearer $TERATAIL_API_TOKEN" \
       $2
@@ -86,25 +86,25 @@ __teratail::help()
   if (( $1 > 0 )); then
     printf "Error: Wrong number of arguments. Expected 0, got $#\n"
   fi
-  cat <<HELP
-Usage:
-  teratail [OPTIONS]
+  cat <<-HELP
+	Usage:
+	  teratail [OPTIONS]
 
-Config:
+	Config:
 
-  .bashrc
+	  .bashrc
 
-  export TERATAIL_API_TOKEN="0123456789abcdef0123456789abcdef0123456789"
+	  export TERATAIL_API_TOKEN="0123456789abcdef0123456789abcdef0123456789"
 
-Options:
-  -h, --help Show help message
+	Options:
+	  -h, --help Show help message
 
-Requirement:
-  jq         https://github.com/stedolan/jq#jq
-  fzf        https://github.com/junegunn/fzf#installation
-  opener     https://www.npmjs.com/package/opener
+	Requirement:
+	  jq         https://github.com/stedolan/jq#jq
+	  fzf        https://github.com/junegunn/fzf#installation
+	  opener     https://www.npmjs.com/package/opener
 
-Author:      maxmellon
+	Author:      maxmellon
 HELP
 
   return 1
